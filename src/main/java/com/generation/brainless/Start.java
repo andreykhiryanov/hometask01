@@ -10,7 +10,7 @@ public class Start {
 
         MusicPlayer player = context.getBean("musicPlayer", MusicPlayer.class);
         System.out.println("Name: " + player.getName() + ".");
-        System.out.println("Value: " + player.getValue() + ".");
+        System.out.println("Volume: " + player.getVolume() + ".");
 
         System.out.println();
 

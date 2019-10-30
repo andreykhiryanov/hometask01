@@ -15,8 +15,8 @@ public class MusicPlayer {
 
     @Value("${musicPlayer.name}")
     private String name;
-    @Value("${musicPlayer.value}")
-    private int value;
+    @Value("${musicPlayer.volume}")
+    private int volume;
 
     private Music classicalMusic;
     private Music rockMusic;
@@ -32,8 +32,8 @@ public class MusicPlayer {
         return name;
     }
 
-    public int getValue() {
-        return value;
+    public int getVolume() {
+        return volume;
     }
 
     public void playMusic(Enum<Genres> genre) {
