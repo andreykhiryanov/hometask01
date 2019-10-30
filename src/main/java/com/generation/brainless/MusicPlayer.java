@@ -18,20 +18,28 @@ public class MusicPlayer {
     @Value("${musicPlayer.value}")
     private int value;
 
-    private Music classicalMusicSong;
-    private Music rockMusicSong;
+    private Music classicalMusic;
+    private Music rockMusic;
 
     @Autowired
-    public MusicPlayer(@Qualifier("classicalMusic") Music classicalMusicSong,
-                       @Qualifier("rockMusic") Music rockMusicSong) {
-        this.classicalMusicSong = classicalMusicSong;
-        this.rockMusicSong = rockMusicSong;
+    public MusicPlayer(@Qualifier("classicalMusic") Music classicalMusic,
+                       @Qualifier("rockMusic") Music rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getValue() {
+        return value;
     }
 
     public void playMusic(Enum<Genres> genre) {
 
-        if (genre == Genres.ROCK) System.out.println("Playing: " + rockMusicSong.getRandomSong());
-        else System.out.println("Playing: " + classicalMusicSong.getRandomSong());
+        if (genre == Genres.ROCK) System.out.println("Playing: " + rockMusic.getRandomSong());
+        else System.out.println("Playing: " + classicalMusic.getRandomSong());
 
     }
 
