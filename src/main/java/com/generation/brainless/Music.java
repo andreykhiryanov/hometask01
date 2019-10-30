@@ -2,6 +2,6 @@ package com.generation.brainless;
 
 public interface Music {
 
-    String getSong();
+    String getRandomSong();
 
 }
